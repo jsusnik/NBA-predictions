@@ -47,7 +47,7 @@ The `logistic_regression_v2.ipynb` and `XGBoost_v2.ipynb` notebooks contain mult
 
 ### 4. Results
 The results were somewhat consistent across all of the models, but the general trend is outlined as follows:
-- The "ignorant" baseline model (not shown) which predicts HOME_WIN every time would be **54% accurate**
+- The "ignorant" baseline model (simply calculated based off of the number of HOME_WINS / total games) which predicts HOME_WIN every time would be **54% accurate**
 - The baseline model which looks at the MATCHUP matrix (HOME and AWAY teams ONLY) achieved a **63% accuracy** (obvious room for error as teams change their lineup and players move around)
 - The moving average model with the MATCHUP matrix improves this accuracy to roughly **63.5-64%** by incorporating 5-game moving average stats for each team
 - The revised moving average model with the MATCHUP matrix improves this accuracy to roughly **64-64.5%** by fine-tuning some of the features
