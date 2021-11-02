@@ -31,7 +31,7 @@ The most correlated stat seems to be the PLUS_MINUS; the average +/- for that te
 
 I decided to run PCA on the DataFrame to see if I could reduce the columns down even further, however the results didn't seem to add much clarity to the model* (*from a visual assessment of the PCA components vs. the explained variance of the features).
 
-*It's worth mentioning that the HOME_TEAM wins 53.6% in this dataset (2013-2015 games specifically).*
+*It's worth mentioning that the HOME_TEAM wins **53.6%** in this dataset (2013-2015 games specifically).*
 
 I briefly explore the individual stats of the top 100 players from the 2012 season, but I am currently not using this data (yet) in my model, due to time constraints. I think there is a lot of room for improving the model by incorporating player data (such as injuries, recent performance, "superstar value" (i.e. how many players account for the total points per game for the team), etc.)
 
@@ -41,4 +41,22 @@ I briefly explore the individual stats of the top 100 players from the 2012 seas
 - `XGBoost_regression.ipynb` : Experimental Regression model that rounds the prediction to try and classify WIN or LOSS, very quick to train
 - `random_forest_classifier.ipynb` : Sklearn's RandomForestClassifier models
 - `XGBoost_v2.ipynb` : XGBoostRandomForestClassifier models 
-- *Most Accurate* `neural_network.ipynb` : Sequential Neural Network 
+- **Most Accurate** `neural_network.ipynb` : Sequential Neural Network which focuses strictly on the 5 game moving average stats
+
+The `logistic_regression_v2.ipynb` and `XGBoost_v2.ipynb` notebooks contain multiple models where I focus on different features, and review the overall performance of each metric, attempting to fine-tune the results.
+
+### 4. Results
+The results were somewhat consistent across all of the models, but the general trend is outlined as follows:
+- The "ignorant" baseline model (not shown) which predicts HOME_WIN every time would be 54% accurate
+- The baseline model which looks at the MATCHUP matrix (HOME and AWAY teams ONLY) achieved a 63% accuracy (obvious room for error as teams change their lineup and players move around)
+- The moving average model with the MATCHUP matrix improves this accuracy to roughly 63.5-64% by incorporating 5-game moving average stats for each team
+- The revised moving average model with the MATCHUP matrix improves this accuracy to roughly 64-64.5% by fine-tuning some of the features
+- The Neural Network model - which only looks at the revised moving average stats, achieved a 65.2% accuracy for the entire 2015 season
+
+### 5. Next Steps
+This was a very fun project but there are so many more things I want to incorporate. As mentioned above, I want to look at the top players for each team, how often each team has played in the last X days, injury reports for each team, coaching changes, the possibilities are endless.
+
+I also wanted to create a website where users could go and select two teams to predict the winner, where the model would send API requests for the teams selected and generate the most recent and up-to-date information to allow for accurate prediction. I was very optimistic about what I could achieve in the ~10 days I had.
+
+### 6. Conclusion
+I think it's important to remember (I've had to remind myself this multiple times) that predicting sports games is not an easy task. There are huge upsets every year and these are the games that bring sporting events to life. 
