@@ -16,7 +16,7 @@ The primary use for this model is sports-betting, with the optimistic goal of ca
 
 In this section I clean up the data. Some noteworthy adjustments:
 - Charlotte changed their name from the Bobcats to the Hornets in 2014
-- LA Clippers appeared as Los Angelese Clippers as well as LA CLippers
+- LA Clippers appeared as Los Angeles Clippers as well as LA CLippers
 - I created a moving average for recent team performance (the most recent *5 games*; an arbitrary number choice I made)
 - I OneHot encoded all of the HOME teams and AWAY teams for each game, creating a sparse matrix specifying the matchup of each game.
 - I applied a MinMax scalar to all of the numeric statistical columns for 2013-2015 game data (on a scale of 0-1)*
