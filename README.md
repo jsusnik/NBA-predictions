@@ -42,6 +42,7 @@ I briefly explore the individual stats of the top 100 players from the 2012 seas
 - `random_forest_classifier.ipynb` : Sklearn's RandomForestClassifier models
 - `XGBoost_v2.ipynb` : XGBoostRandomForestClassifier models 
 - **Most Accurate** `neural_network.ipynb` : Sequential Neural Network which focuses strictly on the 5 game moving average stats
+- **Most Accurate** `neural_network_feature_exploration.ipynb` : Sequential Neural Network which uses the team matchup sparse matrix as well
 
 The `logistic_regression_v2.ipynb` and `XGBoost_v2.ipynb` notebooks contain multiple models where I focus on different features, and review the overall performance of each metric, attempting to fine-tune the results.
 
@@ -52,6 +53,7 @@ The results were somewhat consistent across all of the models, but the general t
 - The moving average model with the MATCHUP matrix improves this accuracy to roughly **63.5-64%** by incorporating 5-game moving average stats for each team
 - The revised moving average model with the MATCHUP matrix improves this accuracy to roughly **64-64.5%** by fine-tuning some of the features
 - The Neural Network model - which only looks at the revised moving average stats, achieved a **65.2%** accuracy for the entire 2015 season
+- The Neural Network model which includes the sparse team matchup matrix achieves a **64.6%** accuracy for the entire 2015 season.
 
 ### 5. Next Steps
 This was a very fun project but there are so many more things I want to incorporate. As mentioned above, I want to look at the top players for each team, how often each team has played in the last X days, injury reports for each team, coaching changes, the possibilities are endless.
