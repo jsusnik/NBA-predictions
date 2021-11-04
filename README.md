@@ -53,7 +53,7 @@ The results were somewhat consistent across all of the models, but the general t
 - The moving average model with the MATCHUP matrix improves this accuracy to roughly **63.5-64%** by incorporating 5-game moving average stats for each team
 - The revised moving average model with the MATCHUP matrix improves this accuracy to roughly **64-64.5%** by fine-tuning some of the features
 - The Neural Network model - which only looks at the revised moving average stats, achieved a **65.2%** accuracy for the entire 2015 season
-- The Neural Network model which includes the sparse team matchup matrix achieves a **64.6%** accuracy for the entire 2015 season.
+- The Neural Network model which includes the sparse team matchup matrix achieves a **65.6%** accuracy for the entire 2015 season.
 
 ### 5. Next Steps
 This was a very fun project but there are so many more things I want to incorporate. As mentioned above, I want to look at the top players for each team, how often each team has played in the last X days, injury reports for each team, coaching changes, the possibilities are endless.
